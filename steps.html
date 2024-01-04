@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шаг номер: {{step-1}}</title>
+    <link rel="stylesheet" href="static/step{{step-1}}.css">
+</head>
+<body class = 'page light-theme'>
+
+<a href="/"><b>На главную</b></a>
+{% if step-1 > 1 %}
+
+<a href="/{{step-2}}"><b>Назад</b></a>
+{% endif %}
+
+<a href="/{{step}}"><b>Далее</b></a>
+
+{% if step-1 >2 %}
+<button class="theme-button" type="button">Сменить тему</button>
+{% endif %}
+
+
+<div><p>Шаг номер: {{step - 1}}</p></div>
+
+<p class="info">{{about}}</p>
+
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
+</body>
+</html>
